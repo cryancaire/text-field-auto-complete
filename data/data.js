@@ -1,4 +1,4 @@
-export let dataObjs = {
+export let dataSets = {
     default: 
         ["Seth",
             "Devin",

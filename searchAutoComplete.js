@@ -1,8 +1,8 @@
 //Get the data from whereever you want
 //look data/data.js for an example of how to 
 //set up the data
-import { dataObjs } from '../data/data.js';
-let theData = dataObjs['default'].sort();
+import { dataSets } from '../data/data.js';
+let theData = dataSets['default'].sort();
 
 //get the input to use
 //and set up some elements
@@ -78,9 +78,9 @@ let processEvent = (item, result) => {
     //the input has a data-set element
     //defined to use that
     if (item.dataset.set) {
-        theData = dataObjs[item.dataset.set].sort();
+        theData = dataSets[item.dataset.set].sort();
     } else {
-        theData = dataObjs['default'].sort();
+        theData = dataSets['default'].sort();
     }
     resultDiv.classList.remove('__results-div_hide');
     result=matchData(item.value, theData);
