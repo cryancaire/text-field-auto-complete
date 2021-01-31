@@ -1,0 +1,36 @@
+.__results-list-item {
+    list-style: none;
+}
+
+.__results-list-item:hover {
+    background-color: lightgray;
+    cursor:pointer;
+}
+
+.__results-ul {
+    padding: 0;
+    margin: 0;
+}
+
+.__auto-complete-wrapper {
+    position: relative;
+}
+
+.__results-div {
+    position: absolute;
+    top: 21px;
+    left: 0;
+    z-index: 10;
+    border: 2px solid black;
+    background-color: #ffffff;
+    border-top: 1px;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+    max-height:100px;
+    overflow-y:auto;
+}
+
+.__results-div_hide {
+    display:none;
+}
