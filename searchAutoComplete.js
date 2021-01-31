@@ -1,7 +1,8 @@
 //Get the data from whereever you want
-import { getMyData } from '../data/data.js';
-let theData = getMyData();
-theData = theData.sort();
+//look data/data.js for an example of how to 
+//set up the data
+import { dataObjs } from '../data/data.js';
+let theData = dataObjs['default'].sort();
 
 //get the input to use
 //and set up some elements
@@ -74,6 +75,13 @@ let displayData = (results, element) => {
 
 //event for both click and typing
 let processEvent = (item, result) => {
+    //the input has a data-set element
+    //defined to use that
+    if (item.dataset.set) {
+        theData = dataObjs[item.dataset.set].sort();
+    } else {
+        theData = dataObjs['default'].sort();
+    }
     resultDiv.classList.remove('__results-div_hide');
     result=matchData(item.value, theData);
     if (result.length < 1) {

@@ -1,5 +1,6 @@
-export function getMyData () {
-    return ["Seth",
+export let dataObjs = {
+    default: 
+        ["Seth",
             "Devin",
             "Kennedy",
             "Valentine",
@@ -21,5 +22,11 @@ export function getMyData () {
             "Elliott",
             "Laith",
             "Corey"
-        ]
+        ],
+    games: [
+        "Final Fantasy 7",
+        "Dragon Quest 8",
+        "The Legend of Zelda: Link to the Past"
+    ]
+
 }
