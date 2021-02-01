@@ -20,8 +20,6 @@ inputToAutoComplete.forEach((item) => {
     parent.replaceChild(wrapper, item);
     wrapper.appendChild(item)
     wrapper.classList.add('__auto-complete-wrapper');
-
-    resultDiv.style.width = `${item.clientWidth}px`;
     item.classList.add('__auto-complete-input');
     let result;
     item.addEventListener("keyup", (e) => {
@@ -75,6 +73,14 @@ let displayData = (results, element) => {
 
 //event for both click and typing
 let processEvent = (item, result) => {
+    //dynamically change the result div width
+    //have to do this in case there are multiple
+    //input fields with differing widths
+    resultDiv.style.width = `${item.clientWidth}px`;
+    resultDiv.style.minWidth = "-webkit-min-content";
+    resultDiv.style.minWidth = "-moz-min-content";
+    resultDiv.style.minWidth = "min-content";
+
     //the input has a data-set element
     //defined to use that
     if (item.dataset.set) {
